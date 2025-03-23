@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 10, 25, 47;
+    --background-end-rgb: 8, 20, 40;
+  }
+  
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))
+      )
+      rgb(var(--background-start-rgb));
+    scroll-behavior: smooth;
+  }
+  
+  @layer base {
+    html {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+  }
+  
+  @layer components {
+    .text-gradient {
+      @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500;
+    }
+    
+    .border-gradient-to-r {
+      border-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to)) 1;
+    }
+  }
+  
+  /* Scroll Animations */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .stagger-item {
+    transition-delay: calc(var(--i) * 100ms);
+  }
+  
+  /* Custom scroll indicator */
+  .scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    transform-origin: left;
+    z-index: 100;
+  }
