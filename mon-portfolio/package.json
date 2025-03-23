@@ -10,17 +10,29 @@
   },
   "dependencies": {
     "framer-motion": "^12.5.0",
+<<<<<<< HEAD:mon-portfolio/package.json
     "lucide-react": "^0.483.0",
     "motion": "^12.5.0",
     "next": "15.2.3",
+=======
+    "next": "15.2.1",
+>>>>>>> 3c553f8b5c7034e80f89273785831e173b1df483:my-portfolio/package.json
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+<<<<<<< HEAD:mon-portfolio/package.json
     "@tailwindcss/postcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.2.3",
     "tailwindcss": "^4"
+=======
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.1",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.3.3"
+>>>>>>> 3c553f8b5c7034e80f89273785831e173b1df483:my-portfolio/package.json
   }
 }
