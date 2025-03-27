@@ -254,15 +254,15 @@ export default function ProjectShowcase() {
                           <div className="absolute inset-0 opacity-20 overflow-hidden">
                             <pre className="text-xs text-left p-8 font-mono">
                               {`function optimize() {
-  const process = new IndustrialProcess();
-  process.analyze();
-  process.improve();
-  return process.getEfficiency();
-}
+                                const process = new IndustrialProcess();
+                                process.analyze();
+                                process.improve();
+                                return process.getEfficiency();
+                              }
 
-// Amélioration des performances
-const efficiency = optimize();
-console.log(\`Efficiency improved: \${efficiency}%\`);`}
+                              // Amélioration des performances
+                              const efficiency = optimize();
+                              console.log(\`Efficiency improved: \${efficiency}%\`);`}
                             </pre>
                           </div>
                         </div>
