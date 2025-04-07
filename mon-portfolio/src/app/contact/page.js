@@ -23,7 +23,7 @@ export default function ContactPage() {
   const [formStatus, setFormStatus] = useState({
     sending: false,
     success: false,
-    error: false
+    error: ''
   });
 
   const handleChange = (e) => {
@@ -36,30 +36,47 @@ export default function ContactPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormStatus({ sending: true, success: false, error: false });
+    setFormStatus({ sending: true, success: false, error: '' });
 
     try {
-      // Simulation d'envoi de formulaire
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Réinitialiser le formulaire
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+      // Envoi réel à l'API au lieu de la simulation
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
       });
       
-      setFormStatus({ 
-        sending: false, 
-        success: true, 
-        error: false 
-      });
+      const result = await response.json();
+
+      if (response.ok) {
+        // Réinitialiser le formulaire en cas de succès
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        
+        setFormStatus({ 
+          sending: false, 
+          success: true, 
+          error: '' 
+        });
+      } else {
+        setFormStatus({ 
+          sending: false, 
+          success: false, 
+          error: result.error || 'Une erreur est survenue' 
+        });
+      }
     } catch (error) {
+      console.error('Erreur lors de la soumission:', error);
       setFormStatus({ 
         sending: false, 
         success: false, 
-        error: true 
+        error: 'Erreur lors de l\'envoi du message' 
       });
     }
   };
@@ -68,20 +85,20 @@ export default function ContactPage() {
     {
       icon: <Mail className="text-orange-300" />,
       title: "Email",
-      content: "jonathan.quelard@example.com",
-      link: "mailto:jonathan.quelard@example.com"
+      content: "jonath91220@gmail.com",
+      link: "mailto:jonath91220@gmail.com"
     },
     {
       icon: <Linkedin className="text-orange-300" />,
       title: "LinkedIn",
-      content: "Jonathan Quelard",
-      link: "https://www.linkedin.com/in/jonathanquelard"
+      content: "Jonathan Queyroi",
+      link: "https://www.linkedin.com/in/jonathan-queyroi-590a3b236/"
     },
     {
       icon: <Github className="text-orange-300" />,
       title: "GitHub",
-      content: "JonathanQuelard",
-      link: "https://github.com/jonathanquelard"
+      content: "jonathanqueyroi",
+      link: "https://github.com/jonathanqueyroi"
     }
   ];
 
@@ -172,7 +189,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-center space-x-4">
                   <PhoneCall className="text-orange-300" />
-                  <span className="text-white">+33 6 XX XX XX XX</span>
+                  <span className="text-white">+33 6 51 16 71 80</span>
                 </div>
               </motion.div>
             </motion.div>
@@ -262,7 +279,7 @@ export default function ContactPage() {
 
                 {formStatus.error && (
                   <div className="mt-4 p-4 bg-red-600/20 border border-red-600 text-red-300 rounded-lg text-center">
-                    Une erreur s'est produite. Veuillez réessayer.
+                    {formStatus.error}
                   </div>
                 )}
               </form>

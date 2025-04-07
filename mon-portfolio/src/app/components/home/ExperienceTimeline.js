@@ -9,14 +9,14 @@ export default function ExperienceTimeline() {
   const experiences = [
     {
       company: "Safran Aircraft Engines",
-      position: "Apprenti Ingénieur en Développement d'Industrie Numérique",
+      position: "Apprenti Ingénieur & Chef de Projet en Développement d’Industrie Numérique",
       period: "09/2022 - 08/2025",
       location: "Evry, France",
       description: [
-        "Développement et gestion d'une application : conception, maquettes (Figma), développement full-stack (Next.js, MongoDB, API Routes).",
-        "Gestion d'un projet en supervisant un apprenti tout en manageant un prestataire pour le développement du code de l'application.",
-        "Conception et développement d'un serious game pour sensibiliser au Closed Door Machining (CDM).",
-        "Programmation d'interfaces UI/UX et développement Web (HTML, CSS, React, Tailwind)."
+        "Développement full-stack et conception UI/UX d'une application innovante, incluant la réalisation de maquettes sous Figma et le développement avec Next.js, MongoDB et API Routes.",
+        "Gestion de projet agile : supervision d'un apprenti et coordination d'un prestataire pour assurer la qualité et la performance du développement.",
+        "Création et implémentation d'un serious game « Closed Door Machining » pour sensibiliser les équipes aux enjeux de l'industrialisation numérique.",
+        "Conception et programmation d'interfaces réactives avec HTML, CSS, React et Tailwind pour une expérience utilisateur optimale."
       ],
       tech: ["Next.js", "MongoDB", "React", "Tailwind", "Figma"]
     },
@@ -26,9 +26,9 @@ export default function ExperienceTimeline() {
       period: "07/2021 - 07/2021",
       location: "Angerville, France",
       description: [
-        "Réalisation de tests fonctionnels complets des armoires électriques en vérifiant leur conformité aux exigences opérationnelles et aux standards de qualité.",
-        "Inspection minutieuse des branchements et connexions pour minimiser les risques de défaillance.",
-        "Contribution à l'assurance qualité en réalisant des tests finaux et validation du bon fonctionnement avant expédition aux clients."
+        "Réalisation de tests fonctionnels approfondis sur des armoires électriques pour vérifier leur conformité aux normes opérationnelles et aux standards de qualité.",
+        "Inspection détaillée des branchements et connexions afin de minimiser les risques de défaillance et garantir la sécurité.",
+        "Contribution à l'assurance qualité par la réalisation de tests finaux et la validation du bon fonctionnement avant expédition."
       ]
     },
     {
@@ -37,13 +37,43 @@ export default function ExperienceTimeline() {
       period: "04/2021 - 06/2021",
       location: "Montlhery, France",
       description: [
-        "Gestion complète d'un projet de conception de coffrets de simulation pour tester les armoires de contrôle-commande, de l'analyse des besoins à la validation finale.",
-        "Programmation d'automates Siemens S7-1200 via TIA-Portal et conception de schémas électriques en CAO.",
-        "Gestion de projet avec coordination des fournisseurs et suivi des achats.",
-        "Assemblage et tests de validation pour garantir la conformité et la fiabilité du produit."
+        "Pilotage intégral d'un projet de conception de coffrets de simulation pour tester les armoires de contrôle-commande, depuis l'analyse des besoins jusqu'à la validation finale.",
+        "Programmation d'automates Siemens S7-1200 via TIA-Portal et conception de schémas électriques assistée par CAO.",
+        "Coordination de projet incluant la gestion des fournisseurs et le suivi des achats pour optimiser les processus de production.",
+        "Assemblage rigoureux et réalisation de tests de validation pour assurer la conformité et la fiabilité des produits."
       ],
-      tech: ["Siemens S7-1200", "TIA-Portal", "CAO"]
-    }
+      tech: ["Siemens S7-1200", "TIA-Portal", "CAO", "Gestion de projet", "Relations clients", "Techniques d'automatisation"]
+    },
+    {
+      company: "SEGA",
+      position: "Monteur-câbleur",
+      period: "juil. 2019 - juil. 2019",
+      location: "Angerville, Île-de-France, France",
+      description: [
+        "Durant ce contrat saisonnier d'un mois chez SEGA, j'ai participé à l'assemblage, au câblage et à la préparation d'armoires électriques, en respectant des procédures de production strictes pour garantir la qualité et la conformité des produits.",
+        "Assemblage de l'ossature des armoires : Montage des structures métalliques en suivant les instructions techniques.",
+        "Préparation des platines : Perçage et préparation des platines pour une fixation optimale des composants.",
+        "Installation des goulottes et rails : Fixation soignée pour organiser le câblage et sécuriser l'ensemble.",
+        "Câblage et tests : Réalisation complète du câblage accompagné de tests rigoureux pour valider le fonctionnement.",
+        "Emballage et préparation à l'expédition : Conditionnement des armoires selon les normes de sécurité pour garantir une livraison sans dommage."
+      ],
+      tech: ["Compétences manuelles et techniques", "Rigueur et respect des normes"]
+    },
+    {
+      company: "SEGA",
+      position: "Monteur-câbleur",
+      period: "juil. 2018 - juil. 2018",
+      location: "Angerville, Île-de-France, France",
+      description: [
+        "Durant ce contrat saisonnier d'un mois chez SEGA, j'ai participé à l'assemblage, au câblage et à la préparation d'armoires électriques, en respectant des procédures de production strictes pour garantir la qualité et la conformité des produits.",
+        "Assemblage de l'ossature des armoires : Montage des structures métalliques en suivant les instructions techniques.",
+        "Préparation des platines : Perçage et préparation des platines pour une fixation optimale des composants.",
+        "Installation des goulottes et rails : Fixation soignée pour organiser le câblage et sécuriser l'ensemble.",
+        "Câblage et tests : Réalisation complète du câblage accompagné de tests rigoureux pour valider le fonctionnement.",
+        "Emballage et préparation à l'expédition : Conditionnement des armoires selon les normes de sécurité pour garantir une livraison sans dommage."
+      ],
+      tech: ["Compétences manuelles et techniques", "Rigueur et respect des normes"]
+    },
   ];
 
   useEffect(() => {
@@ -161,7 +191,7 @@ export default function ExperienceTimeline() {
           </div>
           
           {/* Experience Cards */}
-          <div className="relative min-h-[400px]">
+          <div className="relative min-h-[500px]">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
@@ -224,7 +254,7 @@ export default function ExperienceTimeline() {
           </div>
           
           {/* Navigation Controls */}
-          <div className="flex justify-center mt-10 gap-4">
+          <div className="flex items-center justify-center mt-10 gap-4">
             <motion.button
               className="p-3 rounded-full bg-[#112240] hover:bg-[#172a4e] text-white transition duration-300"
               onClick={() => setActiveIndex(prev => (prev - 1 + experiences.length) % experiences.length)}
@@ -239,7 +269,7 @@ export default function ExperienceTimeline() {
               </svg>
             </motion.button>
             
-            <motion.div className="flex gap-2">
+            <motion.div className="flex items-center gap-2">
               {experiences.map((_, index) => (
                 <motion.button
                   key={index}
